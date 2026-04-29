@@ -56,9 +56,9 @@ services:
   # Leaf node examples
   edge_1:
     image: nats
-    command: -c /etc/edge_1.conf --name edge_1 -p 4225
+    command: -c /etc/edge.conf --name edge_1 -p 4225
     volumes:
-      - ./edge.conf:/etc/edge.conf
+      - ./edge_1.conf:/etc/edge.conf
     ports:
       - 4225:4225
     depends_on:
@@ -67,9 +67,9 @@ services:
       - ap_1
   edge_2:
     image: nats
-    command: -c /etc/edge_2.conf --name edge_2 -p 4226
+    command: -c /etc/edge.conf --name edge_2 -p 4226
     volumes:
-      - ./edge.conf:/etc/edge.conf
+      - ./edge_2.conf:/etc/edge.conf
     ports:
       - 4226:4226
     depends_on:
